@@ -148,6 +148,7 @@
     {            
         // joystick up
         case 'w':
+        case '7':
             if(STICK4WAY)
             {
                 myosd_joy_status[0] &= ~MYOSD_LEFT;
@@ -159,6 +160,7 @@
             joy1 = 1;
             break;
         case 'e':
+        case '8':
             if(STICK4WAY)
             {
                 if(left)myosd_joy_status[0] |= MYOSD_LEFT;
@@ -171,6 +173,7 @@
             
             // joystick down
         case 'x':
+        case '-':
             if(STICK4WAY)
             {
                 myosd_joy_status[0] &= ~MYOSD_LEFT;
@@ -182,6 +185,7 @@
             joy1 = 1;
             break;
         case 'z':
+        case '=':
             if(STICK4WAY)
             {
                 if(left)myosd_joy_status[0] |= MYOSD_LEFT;
@@ -194,6 +198,7 @@
             
             // joystick right
         case 'd':
+        case '\\':
             if(STICK4WAY)
             {
                 myosd_joy_status[0] &= ~MYOSD_UP;
@@ -204,6 +209,7 @@
             joy1 = 1;
             break;
         case 'c':
+        case '/':
             if(STICK4WAY)
             {
                 if(up)myosd_joy_status[0] |= MYOSD_UP;
@@ -216,6 +222,7 @@
             
             // joystick left
         case 'a':
+        case '9':
             if(STICK4WAY)
             {
                 myosd_joy_status[0] &= ~MYOSD_UP;
@@ -226,6 +233,7 @@
             joy1 = 1;
             break;
         case 'q':
+        case '0':
             if(STICK4WAY)
             {
                 if(up)myosd_joy_status[0] |= MYOSD_UP;
@@ -237,7 +245,7 @@
             break;
             
             // Y / UP (iCade/iCP) or 2P Right(iMpulse)
-        case 'i':
+        case 'j':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] |= MYOSD_Y;
@@ -256,7 +264,7 @@
                joy2 = 1;
             }
             break;
-        case 'm':
+        case 'n':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                 myosd_joy_status[0] &= ~MYOSD_Y;
@@ -277,7 +285,7 @@
             break;
             
             // X / DOWN (iCade & iCP) or A / RIGHT (iMpulse)
-        case 'l':
+        case 'y':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] |= MYOSD_X;
@@ -290,7 +298,7 @@
             }
             joy1 = 1;
             break;
-        case 'v':
+        case 't':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] &= ~MYOSD_X;
@@ -305,7 +313,7 @@
             break;
             
             // A / LEFT (iCade & iCP) or X / DOWN (iMpulse)
-        case 'k':
+        case 'h':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] |= MYOSD_A;
@@ -318,7 +326,7 @@
             }
             joy1 = 1;
             break;
-        case 'p':
+        case 'r':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] &= ~MYOSD_A;
@@ -333,7 +341,7 @@
             break;
             
             // B / RIGHT (iCade & iCP) or Y / UP (iMpulse)
-        case 'o':
+        case 'u':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] |= MYOSD_B;
@@ -346,7 +354,7 @@
             }
             joy1 = 1;
             break;
-        case 'g':
+        case 'f':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] &= ~MYOSD_B;
@@ -361,7 +369,7 @@
             break;
             
             // SELECT / COIN (iCade & iCP) or B / RIGHT (iMpulse)
-        case 'y': //button down
+        case 'o': //button down
             
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
@@ -375,7 +383,7 @@
             }
             joy1 = 1;
             break;
-        case 't': //button up
+        case 'g': //button up
             
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
@@ -391,7 +399,7 @@
             break;
             
             //L1(iCade) or START (iCP) or 2P LEFT(iMpulse)
-        case 'u':   //button down
+        case 'i':   //button down
             if(g_pref_ext_control_type == EXT_CONTROL_ICADE) {
                 myosd_joy_status[0] |= MYOSD_L1;
                 ga_btnStates[BTN_L1] = BUTTON_PRESS;
@@ -414,7 +422,7 @@
             }
            
             break;
-        case 'f':   //button up
+        case 'm':   //button up
             if(g_pref_ext_control_type == EXT_CONTROL_ICADE) {
                 myosd_joy_status[0] &= ~MYOSD_L1;
                 ga_btnStates[BTN_L1] = BUTTON_NO_PRESS;
@@ -439,7 +447,7 @@
             break;
             
             //Start(iCade) or L1(iCP) or Coin / Select(iMpulse)
-        case 'h':   //button down
+        case 'l':   //button down
             if(g_pref_ext_control_type == EXT_CONTROL_ICADE) {
                 myosd_joy_status[0] |= MYOSD_START;
                 ga_btnStates[BTN_START] = BUTTON_PRESS;
@@ -455,7 +463,7 @@
             }
             joy1 = 1;
             break;
-        case 'r':   //button up
+        case 'v':   //button up
             if(g_pref_ext_control_type == EXT_CONTROL_ICADE) {
                 myosd_joy_status[0] &= ~MYOSD_START;
                 ga_btnStates[BTN_START] = BUTTON_NO_PRESS;
@@ -473,7 +481,7 @@
             break;
             
             // R1 (iCade & iCP) or Start (iMpulse)
-        case 'j':
+        case 'k':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] |= MYOSD_R1;
@@ -486,7 +494,7 @@
             }
             joy1 = 1;
             break;
-        case 'n':
+        case 'p':
             if(g_pref_ext_control_type != EXT_CONTROL_IMPULSE)
             {
                myosd_joy_status[0] &= ~MYOSD_R1;
@@ -501,7 +509,7 @@
             break;
             
        ////////////
-    
+    /*
             // 2p joystick up
         case '[':
             if(STICK4WAY)
@@ -607,7 +615,7 @@
             myosd_joy_status[1] &= ~MYOSD_START;
             joy2 = 1;
             break;
-            
+            */
         ///////////
             
     }
